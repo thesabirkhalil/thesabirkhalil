@@ -1,0 +1,150 @@
+﻿
+@{
+    ViewBag.Title = "ErpFeePost";
+
+    <link href="~/Global/GlobalCss/toastr.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+}
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<div class="row">
+
+    <div class="col-md-12">
+
+
+        <div class="row" style="padding-bottom: 15px;">
+            <div class="col-md-2 cl5">
+                <label for="inputEmail">College *</label>
+
+                <select id="ddlcollege" class="form-control ddlcollege">
+                </select>
+
+            </div>
+            <div class="col-md-2 cl5">
+                <label for="inputEmail">Program *</label>
+
+                <select id="ddlprog" class="form-control ddlPrgName">
+                </select>
+
+            </div>
+            <div class="col-md-2 cl5">
+                <label for="inputEmail">Sem/Year *</label>
+
+                <select id="ddlsem" class="form-control ddlSem">
+                </select>
+
+            </div>
+
+            <div class="col-md-2">
+                <label for="inputName">Session/Intake  *</label>
+                <select id="ddlsession" class="form-control ">
+                </select>
+
+            </div>
+
+            <div class="col-md-1 cl5">
+                <label for="inputName">Roll No.</label>
+                <input type="text" name="name" id="txtcollgeno" class="form-control f" value="" />
+            </div>
+            <div class="col-md-1 cl5">
+                <label for="inputName">Status</label>
+
+
+                <select class="form-control" id="ddlsts">
+                    <option value="">Status</option>
+                    <option value="P">Pending</option>
+                    <option value="A" selected>Active</option>
+                    <option value="PO">Pass Out</option>
+                    <option value="C">Cancle</option>
+                    <option value="S">Suspended</option>
+                </select>
+
+            </div>
+            <div class="col-md-2 colpad cl5">
+                <p style="margin-bottom: 6px;">&nbsp;</p>
+                <button type="button" class="btn btn-primary    " id="btnSearch">
+                    Search
+
+                </button>
+                <button type="button" class="btn btn-danger " id="btnClearALl">
+                    All
+
+                </button>
+
+            </div>
+
+        </div>
+
+
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="card">
+            <p style="text-align: right; padding: 10px 20px 0px 10px; margin-bottom: 0px;">
+                <button type="button" id="popdemnd" class="btn  btn-sm btn-success btnd hide" data-toggle="modal" data-target="#pup_demand">ERP Fee Post </button>
+            </p>
+            <p>&nbsp;</p>
+            <div class="card-body  table-responsive">
+                <table id="tblStudentLst" class="table  table-hover table-bordered">
+                    <thead class="thead-dark">
+                        <tr>
+                            <th>Sr.</th>
+
+                            <th>College No</th>
+                            <th>Name</th>
+                            <th>Program</th>
+                            <th>Sem/Year</th>
+                            <th>Session</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+
+</div>
+<div class="modal fade" id="pup_demand" tabindex="-1" role="dialog">
+    <div class="modal-dialog modal-sm" role="document">
+        <div class="modal-content">
+
+            <div class="modal-body" style="padding-bottom: 0px;">
+                <h4>Are You  Sure To Create ERP Fee Demand</h4>
+                <div class="row">
+                    <div class="col-md-12 cl5">
+                        <p>Program: <span id="txtprog" class="text-danger"></span></p>
+                        <p>No of Student: <span id="txtnoof" class="text-danger"></span></p>
+                        <p>Fee Amount: <span id="txtamt" class="text-danger"></span></p>
+                    </div>
+                    <div class="col-md-12 cl5">
+                        <label for="inputEmail">Sem/Year *</label>
+
+                        <select id="ddlsemupload" class="form-control ddlSem">
+                        </select>
+
+                    </div>
+
+                </div>
+            </div>
+            <div class="modal-footer">
+
+                <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary" id="btngeneratdemand">Yes Create</button>
+            </div>
+        </div>
+    </div>
+</div>
+@section scripts{
+    <script src="~/Global/GlobalScript/Script.js"></script>
+    <script src="~/Global/GlobalScript/toastr.js"></script>
+    <script src="~/Global/GlobalScript/Notification.js"></script>
+    <script src="~/Global/PageScript/ERPFeePost.js?1.4"></script>
+
+
+}
+

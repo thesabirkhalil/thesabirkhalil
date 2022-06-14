@@ -1,0 +1,362 @@
+{
+	"info": {
+		"_postman_id": "9ee78868-8706-48be-96bc-13e3a82365b6",
+		"name": "Acadmist",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Authentication",
+			"item": [
+				{
+					"name": "Check User and Type",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"Username\" : \"S120601\",\r\n    \"UserTYpe\" : \"User\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{API}}/Authentication/CheckUser"
+					},
+					"response": []
+				},
+				{
+					"name": "Token Login",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var data = pm.response.json()\r",
+									"pm.environment.set(\"Token\", data.access_token)"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "grant_type",
+									"value": "password",
+									"type": "text"
+								},
+								{
+									"key": "UserName",
+									"value": "1919008",
+									"type": "text"
+								},
+								{
+									"key": "Password",
+									"value": "8768767567",
+									"type": "text"
+								},
+								{
+									"key": "UserType",
+									"value": "Student",
+									"type": "text"
+								}
+							]
+						},
+						"url": "{{API}}/token"
+					},
+					"response": []
+				},
+				{
+					"name": "Token Test",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{Token}}"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"url": "{{API}}/DemandStudent/GetTokenTest"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Banner",
+			"item": [
+				{
+					"name": "Get Banner By College Code",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{API}}/Banner/GetBannerByCollege?URLCode=BD1C702D-0653-4E28-8396-3D7BCFDF4120",
+							"host": [
+								"{{API}}"
+							],
+							"path": [
+								"Banner",
+								"GetBannerByCollege"
+							],
+							"query": [
+								{
+									"key": "URLCode",
+									"value": "BD1C702D-0653-4E28-8396-3D7BCFDF4120"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "College",
+			"item": [
+				{
+					"name": "Get College By URLCode",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{API}}/College/GetCollegeByURL?URLCode=B30C8F25-FC42-4741-9F9E-1B429BF3F6D9",
+							"host": [
+								"{{API}}"
+							],
+							"path": [
+								"College",
+								"GetCollegeByURL"
+							],
+							"query": [
+								{
+									"key": "URLCode",
+									"value": "B30C8F25-FC42-4741-9F9E-1B429BF3F6D9"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get College By ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{API}}/College/GetCollegeByID?id=8",
+							"host": [
+								"{{API}}"
+							],
+							"path": [
+								"College",
+								"GetCollegeByID"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "8"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get College By University ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{API}}/College/GetCollegeByUniversity?id=10",
+							"host": [
+								"{{API}}"
+							],
+							"path": [
+								"College",
+								"GetCollegeByUniversity"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "10"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Notice Board",
+			"item": [
+				{
+					"name": "Get Active NoticeBoard",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{API}}/Notice/GetActiveNotice?URLCode=BD1C702D-0653-4E28-8396-3D7BCFDF4120",
+							"host": [
+								"{{API}}"
+							],
+							"path": [
+								"Notice",
+								"GetActiveNotice"
+							],
+							"query": [
+								{
+									"key": "URLCode",
+									"value": "BD1C702D-0653-4E28-8396-3D7BCFDF4120"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Active NoticeBoard By Type",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{API}}/Notice/GetActiveNotice?URLCode=BD1C702D-0653-4E28-8396-3D7BCFDF4120&NoticeType=NB",
+							"host": [
+								"{{API}}"
+							],
+							"path": [
+								"Notice",
+								"GetActiveNotice"
+							],
+							"query": [
+								{
+									"key": "URLCode",
+									"value": "BD1C702D-0653-4E28-8396-3D7BCFDF4120"
+								},
+								{
+									"key": "NoticeType",
+									"value": "NB"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Demand",
+			"item": [
+				{
+					"name": "Reports",
+					"item": []
+				},
+				{
+					"name": "Student",
+					"item": [
+						{
+							"name": "Get Fee Due",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "{{Token}}"
+									}
+								},
+								"method": "GET",
+								"header": [],
+								"url": "{{API}}/DemandStudent/GetFeeDue"
+							},
+							"response": []
+						},
+						{
+							"name": "Get Payment Receipt List'",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "{{Token}}"
+									}
+								},
+								"method": "GET",
+								"header": [],
+								"url": "{{API}}/DemandStudent/GetPaymentReceipt"
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "SMS OutBox",
+			"item": [
+				{
+					"name": "Get SMS List For Student",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{Token}}"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"url": "{{API}}/SMSOutbox/GetNotification"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Company",
+			"item": [
+				{
+					"name": "Get Company List",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				}
+			],
+			"auth": {
+				"type": "bearer",
+				"bearer": {
+					"token": "{{Token}}"
+				}
+			},
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		}
+	]
+}

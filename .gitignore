@@ -1,0 +1,21 @@
+
+MVC.AcademistPortal/MVC.AcademistPortal/bin
+MVC.AcademistPortal/packages
+Acadmist.BAL/.vs/
+Acadmist.BAL/Acadmist.BAL/bin/
+Acadmist.BAL/Acadmist.BAL/obj/
+Academist DAL/.vs/
+Academist DAL/Acadmist.DAL.Authentication/bin/
+Academist DAL/Acadmist.DAL.Authentication/obj/
+Academist DAL/Acadmist.DAL.Infra/bin/
+Academist DAL/Acadmist.DAL.Infra/obj/
+Academist DAL/packages/
+Acadmist.RESTAPI/.vs/
+Acadmist.RESTAPI/Acadmist.RESTAPI/obj/
+Acadmist.RESTAPI/packages/
+DLLManage/
+DLLManage - Shortcut.lnk
+Acadmist.RESTAPI/Acadmist.RESTAPI/bin/
+Academist DAL/Acadmist.DAL.Demand/bin/
+Academist DAL/Acadmist.DAL.Demand/obj/
+Acadmist.RESTAPI/Acadmist.RESTAPI/Properties/PublishProfiles/FolderProfile.pubxml.user

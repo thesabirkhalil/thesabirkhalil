@@ -1,0 +1,17 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\Authentication",
+    "\\Authentication\\Views",
+    "\\Company",
+    "\\Company\\SP",
+    "\\Setting",
+    "\\Setting\\Querys",
+    "\\Setting\\SP",
+    "\\Store Procedure",
+    "\\Store Procedure\\Demand",
+    "\\Store Procedure\\Demand\\Views"
+  ],
+  "SelectedNode": "\\Setting\\SP\\EC_SPGetSettings.sql",
+  "PreviewInSolutionExplorer": false
+}
