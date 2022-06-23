@@ -10,7 +10,7 @@ namespace Acadmist.RESTAPI.Controllers
     {
         public ActionResult Index()
         {
-            ViewBag.Title = "Home Page";
+            ViewBag.Title = "Home Page Name has been Changed";
 
             return View();
         }
