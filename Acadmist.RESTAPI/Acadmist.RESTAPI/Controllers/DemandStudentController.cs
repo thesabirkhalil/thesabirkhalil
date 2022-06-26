@@ -63,7 +63,7 @@ namespace Acadmist.RESTAPI.Controllers
             {
                 return Request.CreateResponse(HttpStatusCode.NotFound, _Response.Failed("Invalid Demand Suplied"));
             }
-            return Request.CreateResponse(HttpStatusCode.OK, result);
+            return Request.CreateResponse(HttpStatusCode.OK, result)
         }
 
 
