@@ -57,6 +57,7 @@ namespace Acadmist.RESTAPI.Controllers
         [HttpGet]
         public HttpResponseMessage GetDemandDetail(int DemandID)
         {
+                // int i = 100;
             var result = _demandDetail.GetDemandDetails_Student(DemandID, _tokenAccess.UserID);
             if (result.Count() <= 0)
             {
